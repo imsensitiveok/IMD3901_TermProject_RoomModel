@@ -19,21 +19,29 @@
 
     <a-scene circles_scene_properties>
       <a-assets>
-        <!-- sky image. credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
+        <!-- images -->
         <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
+        <!-- ^ credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
 
+        <!-- sound effects-->
+        <audio id="door_sound" src="/assets/sound_effects/doorOpening.mp3" preload="auto" crossorigin="anonymous"></audio>
+        <!-- ^ from https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6038 on Pixabay-->
 
-        <!-- room model -->
+        <!-- room models -->
         <a-asset-item id="roughLabModel" src="assets/models/room.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="doorModel" src="assets/models/single_door.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="garageDoorModel" src="assets/models/garage_door.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
 
         <!-- agriculture room models -->
         <a-asset-item id="microscope_model" src="assets/models/microscope.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="slideCase_model" src="assets/models/slideCase.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="compMonitor_model" src="assets/models/compMonitor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="eggCandlingDevice_model" src="assets/models/eggCandlingDevice.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <!-- coop (+ nest?) -->
-        <!-- chicken -->
-        <!-- egg -->
+        <a-asset-item id="chicken_model" src="assets/models/chicken.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="boxNest_model" src="assets/models/box_nest.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="egg_model" src="assets/models/egg.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="nest_model" src="assets/models/nest.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
 
         <!-- aviation and space room models -->
@@ -65,8 +73,10 @@
       <a-entity circles-checkpoint position="8 0.35 -7"></a-entity>
       
 
-      <!-- load room model -->
+      <!-- load room models -->
       <a-entity id="digitalLab" position="0 -0.15 0" rotation="0 0 0" scale="1 1 1" gltf-model="#roughLabModel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="door" position="-6.35 0 -4.52" rotation="0 0 0" scale="1 1 1" gltf-model="#doorModel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="garageDoor" position="3.3 0 -2.5" rotation="0 0 0" scale="1 1 1" gltf-model="#garageDoorModel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
       <!-- load agriculture room models -->
       <a-entity id="microscope_table"
@@ -80,15 +90,22 @@
                 <a-entity id="monitor" position="0.2 0.4 -1" rotation="0 200 0" scale="30 30 30" gltf-model="#compMonitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       </a-entity>
       <a-entity id="eggCandlingDevice_table"
-                position="-13 0.4 0"
+                position="-13 0.4 -3"
                 geometry="primitive:box; height:0.8; width:1.0; depth:1.0;"
                 material="color:black;"
                 circles-sphere-env-map="src:#skyMap" 
                 shadow="case:true; receive:true;">
                 <a-entity id="eggCandlingDevice" position="0 0.4 0" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       </a-entity>
+      <a-entity id="boxNest" position="-13 0 -6" rotation="0 -110 0" scale="30 30 30" gltf-model="#boxNest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;">
+                <a-entity id="chicken" rotation="0 180 0" scale="0.08 0.08 0.08" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+                <a-entity id="nest" position="0 0.01 0" gltf-model="#nest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="egg" position="-13 0.4 -5" rotatioan="0 -30 0" scale="50 50 50" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
+a
       <!-- load aviation and space room models-->
+
 
       <!-- load lobby models-->
       <a-entity id="whiteboard" position="1.5 0 -8" rotation="0 -30 0" scale="30 30 30" gltf-model="#whiteboard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -104,8 +121,7 @@
                 <a-entity id="television" position="0 0.4 0" rotation="0 -90 0" scale="30 30 30" gltf-model="#television_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
                 <a-entity id="antenna" position="0 0.4 1" rotation="0 -120 0" scale="30 30 30" gltf-model="#antenna_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       </a-entity>
-      <a-entity id="trunkTrunk" position="8 0 -4" rotation="0 -90 0" scale="30 30 30" gltf-model="#trunkTrunk_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-
+      <a-entity id="trunkTrunk" position="10 0 -6" rotation="0 -75 0" scale="30 30 30" gltf-model="#trunkTrunk_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
 
       <!-- sky and lights -->
