@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Circles' head scripts [REQUIRED] -->
+    <circles-start-scripts/>
+
+    
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <!-------------- ^ REMOVE AFRAME ^ --------------------------------------------->
+    <!------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------>
+
+  </head>
+  <body>
+
+    <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+    <circles-start-ui/>
+
+    <a-scene circles_scene_properties>
+      <a-assets>
+        <!-- sky image. credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
+        <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
+
+
+        <!-- room model -->
+        <a-asset-item id="roughLabModel" src="assets/models/room.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <!-- agriculture room models -->
+        <a-asset-item id="microscope_model" src="assets/models/microscope.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="slideCase_model" src="assets/models/slideCase.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="compMonitor_model" src="assets/models/compMonitor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="eggCandlingDevice_model" src="assets/models/eggCandlingDevice.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <!-- coop (+ nest?) -->
+        <!-- chicken -->
+        <!-- egg -->
+
+
+        <!-- aviation and space room models -->
+
+
+        <!-- lobby models -->
+        <a-asset-item id="whiteboard_model" src="assets/models/whiteboard.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <!-- science and tech room models -->
+        <a-asset-item id="television_model" src="assets/models/television.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="antenna_model" src="assets/models/antenna.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="trunkTrunk_model" src="assets/models/trunkTrunk.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
+      </a-assets>
+
+      <!-- Circles' built-in manager and avatar [REQUIRED] -->
+      <!-- <circles-manager-avatar/>-->
+      <!--------------- ^ ADD THIS BACK IN ^ ----------------------------------------->
+      <!------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------>
+
+      <!-- circles checkpoints -->
+      <a-entity circles-checkpoint position="0 0.35 0"></a-entity>
+      <a-entity circles-checkpoint position="2 0.35 6"></a-entity>
+      <a-entity circles-checkpoint position="-3 0.35 5"></a-entity>
+      <a-entity circles-checkpoint position="-2 0.35 -7"></a-entity>
+      <a-entity circles-checkpoint position="8 0.35 -7"></a-entity>
+      
+
+      <!-- load room model -->
+      <a-entity id="digitalLab" position="0 -0.15 0" rotation="0 0 0" scale="1 1 1" gltf-model="#roughLabModel" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      
+      <!-- load agriculture room models -->
+      <a-entity id="microscope_table"
+                position="-7.5 0.4 3"
+                geometry="primitive:box; height:0.8; width:1.0; depth:3.0;"
+                material="color:black;"
+                circles-sphere-env-map="src:#skyMap" 
+                shadow="case:true; receive:true;">
+                <a-entity id="microscope" position="-0.2 0.4 0" rotation="0 -90 0" scale="30 30 30" gltf-model="#microscope_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+                <a-entity id="slideCase" position="-0.2 0.4 1" rotation="0 140 0" scale="30 30 30" gltf-model="#slideCase_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+                <a-entity id="monitor" position="0.2 0.4 -1" rotation="0 200 0" scale="30 30 30" gltf-model="#compMonitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="eggCandlingDevice_table"
+                position="-13 0.4 0"
+                geometry="primitive:box; height:0.8; width:1.0; depth:1.0;"
+                material="color:black;"
+                circles-sphere-env-map="src:#skyMap" 
+                shadow="case:true; receive:true;">
+                <a-entity id="eggCandlingDevice" position="0 0.4 0" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+
+      <!-- load aviation and space room models-->
+
+      <!-- load lobby models-->
+      <a-entity id="whiteboard" position="1.5 0 -8" rotation="0 -30 0" scale="30 30 30" gltf-model="#whiteboard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="whiteboard" position="-3 0 6" rotation="0 -15 0" scale="30 30 30" gltf-model="#whiteboard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+      <!-- load science and tech room models-->
+      <a-entity id="television_table"
+                position="11 0.4 2"
+                geometry="primitive:box; height:0.8; width:1.0; depth:2.5;"
+                material="color:black;"
+                circles-sphere-env-map="src:#skyMap" 
+                shadow="case:true; receive:true;">
+                <a-entity id="television" position="0 0.4 0" rotation="0 -90 0" scale="30 30 30" gltf-model="#television_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+                <a-entity id="antenna" position="0 0.4 1" rotation="0 -120 0" scale="30 30 30" gltf-model="#antenna_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      </a-entity>
+      <a-entity id="trunkTrunk" position="8 0 -4" rotation="0 -90 0" scale="30 30 30" gltf-model="#trunkTrunk_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
+
+
+      <!-- sky and lights -->
+      <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
+                light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>
+      <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
+
+      <a-entity id='skyBox'
+                rotation='0 200 0'
+                geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
+                material='shader:flat; src:#skyMap; side:back;'>
+      </a-entity>
+    </a-scene>
+
+    <!-- Circles' end scripts [REQUIRED] -->
+    <circles-end-scripts/>
+  </body>
+</html>
