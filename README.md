@@ -2,4 +2,4 @@
 
 ## You must:
 1. remove aframe
-2. uncomment the line <circles-manager-avatar/>
+2. uncomment the line "<circles-manager-avatar/>"
