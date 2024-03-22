@@ -26,6 +26,10 @@
         <img id="SA_img" src="assets\images\SA_logo.png" crossorigin="anonymous">
         <img id="ST_img" src="assets\images\ST_logo.png" crossorigin="anonymous">
         <!-- ^ credit: Ingenium @ https://ingeniumcanada.org/ -->
+        <img id="AF_wall_img" src="assets\textures\AF_walls.png" crossorigin="anonymous">
+        <img id="ST_wall_img" src="assets\textures\ST_walls.png" crossorigin="anonymous">
+        <!-- ^ credit: flaticon @ https://www.flaticon.com/ -->
+
 
         <!-- sound effects-->
         <audio id="door_sound" src="/assets/sound_effects/doorOpening.mp3" preload="auto" crossorigin="anonymous"></audio>
@@ -117,7 +121,7 @@
       </a-entity>
       <a-entity id="slideCaseClosed" position="-12 0.1 -6.5" rotation="0 -90 0" scale="30 30 30" gltf-model="#slideCaseClosed_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="chickenOnSlides" position="-12 0 -6.5" rotation="0 30 0" scale="2 2 2" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-
+      <a-image position="-15.15 3 0" rotation="0 90 0" src="#AF_wall_img" width="30" height="6"></a-image>
 
       <!-- load aviation and space room models-->
 
@@ -138,6 +142,7 @@
                 <a-entity id="antenna" position="1 0.4 0" rotation="0 -30 0" scale="30 30 30" gltf-model="#antenna_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       </a-entity>
       <a-entity id="trunkTrunk" position="10 0 -6" rotation="0 -75 0" scale="30 30 30" gltf-model="#trunkTrunk_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-image position="12.39 3 0" rotation="0 -90 0" src="#ST_wall_img" width="30" height="6"></a-image>
 
     
       <a-entity id='skyBox'
