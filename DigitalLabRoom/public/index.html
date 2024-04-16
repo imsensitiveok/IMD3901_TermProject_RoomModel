@@ -23,7 +23,6 @@
         <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
         <!-- ^ credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
         <img id="AF_img" src="assets\images\AF_logo.png" crossorigin="anonymous">
-        <img id="SA_img" src="assets\images\SA_logo.png" crossorigin="anonymous">
         <img id="ST_img" src="assets\images\ST_logo.png" crossorigin="anonymous">
         <!-- ^ credit: Ingenium @ https://ingeniumcanada.org/ -->
         <img id="AF_wall_img" src="assets\textures\AF_walls.png" crossorigin="anonymous">
@@ -63,8 +62,10 @@
 
         <!-- science and tech room models -->
         <a-asset-item id="antenna_model" src="assets/models/antenna.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="chair_model" src="assets/models/chair.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="keyCard_model" src="assets/models/keyCard.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="radio_model" src="assets/models/radio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="table_model" src="assets/models/table.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="television_model" src="assets/models/television.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunk_model" src="assets/models/trunkTrunk.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunkOpened_model" src="assets/models/trunkTrunk_open.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -80,6 +81,8 @@
       <!------------------------------------------------------------------------------>
       <!------------------------------------------------------------------------------>
 
+
+
       <!-- circles checkpoints -->
       <a-entity circles-checkpoint position="0 0.35 0"></a-entity>
       <a-entity circles-checkpoint position="2 0.35 6"></a-entity>
@@ -87,6 +90,7 @@
       <a-entity circles-checkpoint position="-2 0.35 -7"></a-entity>
       <a-entity circles-checkpoint position="8 0.35 -7"></a-entity>
       
+
 
       <!-- load room models -->
       <a-entity id="room" position="0 -0.15 0" gltf-model="#room_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -97,6 +101,7 @@
       <a-entity id="garageDoor" position="3.8 0 -3.95" rotation="0 0 0" gltf-model="#garageDoor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;">
                 <a-image position="-0.07 2 -0.2" rotation="0 90 0" src="#ST_img" width="1.5" height="1.5"></a-image>
       </a-entity>
+
 
       
       <!-- load agriculture room models -->
@@ -126,19 +131,21 @@
       <a-image position="-15.15 3 0" rotation="0 90 0" src="#AF_wall_img" width="30" height="6"></a-image>
 
 
-      <!-- load aviation and space room models-->
-
 
       <!-- load lobby models-->
       <a-entity id="whiteboard1" position="1.5 0 -8" rotation="0 -30 0" scale="30 30 30" gltf-model="#whiteboard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-entity id="whiteboard2" position="-3 0 6" rotation="0 -15 0" scale="30 30 30" gltf-model="#whiteboard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      
+      <a-entity id="table1" position="-2 0 -10" scale="30 30 30" gltf-model="#table_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="chair1" position="-1.2 0 -11.5" scale="30 30 30" gltf-model="#chair_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="chair2" position="-2.8 0 -11.5" scale="30 30 30" gltf-model="#chair_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
       <a-entity id="keyCard_table" position="-3 0.4 -3" geometry="primitive:box; height:0.8; width:0.4; depth:0.4;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="keyCard" position="-3 0.8 -3" scale="30 30 30" gltf-model="#keyCard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
       <a-entity id="camera_table" position="-3 0.4 2" geometry="primitive:box; height:0.8; width:0.6; depth:0.6;" material="color:grey;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="camera" position="-3 1 1.9" scale="50 50 50" gltf-model="#camera_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
+
 
       <!-- load science and tech room models-->
       <a-entity id="television_table" position="11 0.4 1.8" geometry="primitive:box; height:0.8; width:1.2; depth:5;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
