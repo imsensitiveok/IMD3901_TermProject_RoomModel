@@ -102,9 +102,12 @@
       <!-- load agriculture room models -->
       <a-entity id="microscope_table" position="-7.5 0.4 3" geometry="primitive:box; height:0.8; width:1.0; depth:3.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="microscope" position="-7.7 0.8 3" rotation="0 -90 0" scale="30 30 30" gltf-model="#microscope_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-          <a-entity id="slideCase" position="-7.7 0.8 4" rotation="0 140 0" scale="30 30 30" gltf-model="#slideCase_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
           <a-entity id="monitor" position="-7.3 0.8 2" rotation="0 200 0" scale="30 30 30" gltf-model="#compMonitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      
+          <a-entity id="slideCase" position="-7.7 0.8 4" rotation="0 140 0" scale="30 30 30" gltf-model="#slideCase_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="true"></a-entity>
+              <a-entity id="slide1" position="-7.8 0.8 4.1" rotation="0 140 0" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+              <a-entity id="slide2" position="-7.9 0.8 4.22" rotation="0 140 0" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+              <a-entity id="slide3" position="-8 0.8 4.35" rotation="0 140 0" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+
       <a-entity id="egg_table" position="-14 0.4 -3" geometry="primitive:box; height:0.8; width:1.0; depth:2.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="eggCandlingDevice" position="-14 0.8 -3.5" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="egg1" position="-13.8 0.88 -3.0" rotation="0 -10 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -117,6 +120,8 @@
       
       <a-entity id="slideCaseClosed" position="-12 0.1 -6.5" rotation="0 -90 0" scale="30 30 30" gltf-model="#slideCaseClosed_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="chickenOnSlides" position="-12 0 -6.5" rotation="0 30 0" scale="2.5 2.5 2.5" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      
+      <a-entity id="beanPoster" position="-11 2.5 7" rotation="0 180 0" scale="120 120 120" gltf-model="#beanPoster_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
       <a-image position="-15.15 3 0" rotation="0 90 0" src="#AF_wall_img" width="30" height="6"></a-image>
 
