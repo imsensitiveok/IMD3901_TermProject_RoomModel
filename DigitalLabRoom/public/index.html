@@ -20,8 +20,6 @@
     <a-scene circles_scene_properties>
       <a-assets>
         <!-- images -->
-        <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
-        <!-- ^ credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
         <img id="AF_img" src="assets\images\AF_logo.png" crossorigin="anonymous">
         <img id="AS_img" src="assets\images\AS_logo.png" crossorigin="anonymous">
         <img id="ST_img" src="assets\images\ST_logo.png" crossorigin="anonymous">
@@ -40,8 +38,6 @@
         <img id="slide7_img" src="assets\images\slide7.png" crossorigin="anonymous">
         <img id="slide8_img" src="assets\images\slide8.png" crossorigin="anonymous">
         <img id="slide9_img" src="assets\images\slide9.png" crossorigin="anonymous">
-
-
 
 
         <!-- sound effects-->
@@ -72,14 +68,16 @@
         <a-asset-item id="camera_model" src="assets/models/camera.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="cameraLens_model" src="assets/models/yellowLens.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="whiteboard_model" src="assets/models/whiteboard.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="chair_model" src="assets/models/chair.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="table_model" src="assets/models/table.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="keyCard_model" src="assets/models/keyCard.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="keyPad_model" src="assets/models/keyPad.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="keyPad_scan_model" src="assets/models/keyPad_scan.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
 
         <!-- science and tech room models -->
         <a-asset-item id="antenna_model" src="assets/models/antenna.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="chair_model" src="assets/models/chair.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="keyCard_model" src="assets/models/keyCard.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="radio_model" src="assets/models/radio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-        <a-asset-item id="table_model" src="assets/models/table.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="television_model" src="assets/models/television.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunk_model" src="assets/models/trunkTrunk.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunkOpened_model" src="assets/models/trunkTrunk_open.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -89,14 +87,13 @@
         <circles-assets/>
       </a-assets>
 
-      <a-entity camera wasd-controls look-controls position="-9 1.6 6"></a-entity>
+      <!--<a-entity camera wasd-controls look-controls position="8 1.6 6"></a-entity>-->
 
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <!-- <circles-manager-avatar/>-->
       <!--------------- ^ ADD THIS BACK IN ^ ----------------------------------------->
       <!------------------------------------------------------------------------------>
       <!------------------------------------------------------------------------------>
-
 
 
       <!-- circles checkpoints -->
@@ -179,6 +176,9 @@
           <a-entity id="camera" position="-3 1 -2" scale="50 50 50" gltf-model="#camera_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="keyCard" position="-3 0.8 -2.2" scale="30 30 30" gltf-model="#keyCard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
       
+      <a-entity id="garageKeyPad" position="3.8 1.8 -2.2" rotation="0 -90 0" gltf-model="#keyPad_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="elevatorKeyPad" position="-7.2 1.5 -11" rotation="0 0 -90" gltf-model="#keyPad_scan_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      
 
 
       <!-- load science and tech room models-->
@@ -192,11 +192,10 @@
       <a-entity id="trunkTrunk_open" position="10 0.01 -6" rotation="0 -75 0" scale="30 30 30" gltf-model="#trunkTrunkOpened_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="true"></a-entity>
           <a-entity id="cameraLens" position="10 1 -6" rotation="90 0 0" scale="100 100 100" gltf-model="#cameraLens_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
             
+      <a-entity id="radio" position="5.5 0 -12" rotation="0 25 0" scale="80 80 80" gltf-model="#radio_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      
 
     
-      <!-- sky box -->
-      <a-entity id='skyBox' rotation='0 200 0' geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;' material='shader:flat; src:#skyMap; side:back;'></a-entity>
-
     </a-scene>
 
     <!-- Circles' end scripts [REQUIRED] -->
