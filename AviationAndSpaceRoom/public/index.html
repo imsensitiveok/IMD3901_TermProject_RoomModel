@@ -22,10 +22,13 @@
         <!-- images -->
         <img id='skyMap' src='assets/textures/moonless_golf.jpg' crossorigin="anonymous">
         <!-- ^ credit: Poly Haven @ https://polyhaven.com/a/moonless_golf -->
-        <img id="AS_img" src="assets\images\AS_logo.png" crossorigin="anonymous">
+        <img id="AS_img" src="assets/images/AS_logo.png" crossorigin="anonymous">
         <!-- ^ credit: Ingenium @ https://ingeniumcanada.org/ -->
-        <img id="AS_wall_img" src="assets\textures\AS_walls.png" crossorigin="anonymous">
+        <img id="AS_wall_img" src="assets/textures/AS_walls.png" crossorigin="anonymous">
         <!-- ^ credit: flaticon @ https://www.flaticon.com/ -->
+        <img id="constellation_img" src="assets/images/constellation_monitor.png" crossorigin="anonymous">
+        <img id="radio_img" src="assets/images/radioInstructions.png" crossorigin="anonymous">
+        <img id="telescope_img" src="assets/images/telescopeInstructions.png" crossorigin="anonymous">
 
 
         <!-- sound effects-->
@@ -37,6 +40,7 @@
         <a-asset-item id="radio_model" src="assets/models/aviationSpaceRadio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="radioDial_model" src="assets/models/aviationSpaceRadioDial.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="chair_model" src="assets/models/chair.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="constellation_model" src="assets/models/constellation.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="lighthouse_model" src="assets/models/lighthouse.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="monitor_model" src="assets/models/monitor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="plane_model" src="assets/models/plane.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -86,20 +90,26 @@
 
 
       <!-- radio -->
-      <a-entity position="-4.5 0.15 -3" geometry="primitive:box; height:1.3; width:0.8; depth:1.2;" material="color:white;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+      <a-entity position="-4.5 0.15 -3" geometry="primitive:box; height:1.3; width:0.8; depth:2.2;" material="color:gray;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;">
+          <a-image position="0.41 0 -0.1" rotation="0 90 0" src="#radio_img" width="2.5" height="1.5"></a-image></a-entity>
           <a-entity id="radio" position="-4.5 0.8 -3" rotation="0 90 0" scale="100 100 100" gltf-model="#radio_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-entity id="radioDial" position="-4.5 0.8 -3" rotation="0 90 0" scale="100 100 100" gltf-model="#radioDial_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
 
       <!-- telescope -->
-      <a-entity position="0 0.15 1" geometry="primitive:box; height:1.3; width:3; depth:1;" material="color:white;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+      <a-entity position="0 0.15 1" geometry="primitive:box; height:1.3; width:3; depth:1;" material="color:gray;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;">
+          <a-image position="0 0 -0.51" rotation="0 180 0" src="#telescope_img" width="2.5" height="1.5"></a-image></a-entity>
           <a-entity id="telescope" rotation="0 180 0" position="0 0.8 1" scale="30 30 30" gltf-model="#telescope_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="monitor" rotation="0 90 0" position="1 0.8 1" scale="30 30 30" gltf-model="#monitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-image position="1 1.25 0.82" rotation="0 180 0" src="#constellation_img" width="1" height="0.6"></a-image>
+          <a-entity id="constellationSheet" rotation="0 180 0" position="-1 0.8 1" gltf-model="#constellation_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
 
       <!-- terminal -->
-      <a-entity position="4.6 0.15 4.8" geometry="primitive:box; height:1.3; width:1.2; depth:2.2;" material="color:white;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
-          <a-entity id="terminal" position="4.6 0.8 4.8" rotation="0 -90 0" scale="50 50 50" gltf-model="#terminal_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity position="4.6 0.15 4.8" geometry="primitive:box; height:1.3; width:1.2; depth:2.2;" material="color:gray;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+          <a-entity id="terminal" position="4.6 0.8 4.6" rotation="0 -90 0" scale="50 50 50" gltf-model="#terminal_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="lighthouseButton" position="4.6 0.8 5.5" geometry="primitive:cylinder; height:0.3; radius:0.2;" material="color:green;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+          <a-entity id="buttonCover" position="4.6 0.8 5.5" geometry="primitive:box; height:0.4; width:0.5; depth:0.5;" material="color:rgb(200, 200, 255); opacity:0.7;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;" visible="true"></a-entity>
 
 
       <!-- sky box -->
