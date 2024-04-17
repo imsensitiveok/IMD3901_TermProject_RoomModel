@@ -58,10 +58,12 @@
         <a-asset-item id="egg_model" src="assets/models/egg.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="eggCandlingDevice_model" src="assets/models/eggCandlingDevice.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="microscope_model" src="assets/models/microscope.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="milkCan_model" src="assets/models/milkCan.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="nest_model" src="assets/models/nest.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="slideCase_model" src="assets/models/slideCase.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="slideCaseClosed_model" src="assets/models/slideCaseClosed.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="slides_model" src="assets/models/slide.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="soupFan_model" src="assets/models/soupFan.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
 
         <!-- lobby models -->
@@ -78,6 +80,8 @@
         <!-- science and tech room models -->
         <a-asset-item id="antenna_model" src="assets/models/antenna.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="radio_model" src="assets/models/radio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="railSegment_model" src="assets/models/railSegment.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="ringStand_model" src="assets/models/ringStand.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="television_model" src="assets/models/television.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunk_model" src="assets/models/trunkTrunk.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="trunkTrunkOpened_model" src="assets/models/trunkTrunk_open.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -87,7 +91,6 @@
         <circles-assets/>
       </a-assets>
 
-      <!--<a-entity camera wasd-controls look-controls position="8 1.6 6"></a-entity>-->
 
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <!-- <circles-manager-avatar/>-->
@@ -104,6 +107,7 @@
       <a-entity circles-checkpoint position="8 0.35 -7"></a-entity>
 
 
+
       <!-- load room models -->
       <a-entity id="room" position="0 -0.15 0" gltf-model="#room_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       <a-image position="-5.85 3.5 -5.95" rotation="0 90 0" src="#AF_img" width="1.5" height="1.5"></a-image>
@@ -117,10 +121,12 @@
       <a-image position="-15.15 3 0" rotation="0 90 0" src="#AF_wall_img" width="30" height="6"></a-image>
       <a-image position="12.39 3 0" rotation="0 -90 0" src="#ST_wall_img" width="30" height="6"></a-image>
 
+
       
       <!-- load agriculture room models -->
-      <a-entity id="microscope_table" position="-7.5 0.4 3" geometry="primitive:box; height:0.8; width:1.0; depth:3.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+      <a-entity position="-7.5 0.4 3" geometry="primitive:box; height:0.8; width:1.0; depth:3.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="microscope" position="-7.7 0.8 3" rotation="0 -90 0" scale="30 30 30" gltf-model="#microscope_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-image position="-6.7 2.5 3" rotation="0 -90 0" src="#slidesCode_img" width="4.25" height="1"></a-image>
           <a-entity id="monitor" position="-7.3 0.8 2" rotation="0 180 0" scale="30 30 30" gltf-model="#compMonitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-image id="slide0_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide0_img" width="1" height="0.6" visible="false"></a-image>
               <a-image id="slide1_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide1_img" width="1" height="0.6" visible="false"></a-image>
@@ -143,24 +149,24 @@
               <a-entity id="slide7" position="-7.7 0.8 3.75" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-entity id="slide8" position="-7.7 0.8 3.85" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>              
               <a-entity id="slide9" position="-7.7 0.8 3.95" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      
-      <a-image position="-6.7 2.5 3" rotation="0 -90 0" src="#slidesCode_img" width="4.25" height="1"></a-image>
 
-      <a-entity id="egg_table" position="-14 0.4 -3" geometry="primitive:box; height:0.8; width:1.0; depth:2.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
-          <a-entity id="eggCandlingDevice" position="-14 0.8 -3.5" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-          <a-entity id="egg1" position="-13.8 0.88 -3.0" rotation="0 -10 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-          <a-entity id="egg2" position="-13.9 0.88 -2.8" rotation="0 0 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-          <a-entity id="egg3" position="-13.7 0.88 -2.6" rotation="0 30 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="egg_table" position="-12 0.4 0" geometry="primitive:box; height:0.8; width:1.0; depth:2.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+          <a-entity id="eggCandlingDevice" position="-12 0.8 -0.5" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="egg1" position="-11.8 0.88 0" rotation="0 -10 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="egg2" position="-11.9 0.88 0.2" rotation="0 0 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="egg3" position="-11.7 0.88 0.6" rotation="0 30 90" scale="30 30 30" gltf-model="#egg_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
-      <a-entity id="boxNest" position="-14 0 -6" rotation="0 -110 0" scale="30 30 30" gltf-model="#boxNest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-          <a-entity id="chickenInCoop" position="-14 0 -6" rotation="0 70 0" scale="2.5 2.5 2.5" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="true"></a-entity>
-          <a-entity id="nest" position="-14 0.1 -6" rotation="0 -110 0" scale="30 30 30" gltf-model="#nest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="boxNest" position="-14 0 -5" rotation="0 -110 0" scale="30 30 30" gltf-model="#boxNest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+          <a-entity id="chickenInCoop" position="-14 0 -5" rotation="0 70 0" scale="2.5 2.5 2.5" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="true"></a-entity>
+          <a-entity id="nest" position="-14 0.1 -5" rotation="0 -110 0" scale="30 30 30" gltf-model="#nest_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
       <a-entity id="slideCaseClosed" position="-12 0.1 -6.5" rotation="0 -90 0" scale="30 30 30" gltf-model="#slideCaseClosed_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="chickenOnSlides" position="-12 0 -6.5" rotation="0 30 0" scale="2.5 2.5 2.5" gltf-model="#chicken_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
       <a-entity id="beanPoster" position="-11 2.5 7" rotation="0 180 0" scale="120 120 120" gltf-model="#beanPoster_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-      
+      <a-entity id="milkCan" position="-13.5 0 6.5" rotation="0 180 0" scale="30 30 30" gltf-model="#milkCan_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="milkCan" position="-14 0 6.55" rotation="0 180 0" scale="50 50 50" gltf-model="#milkCan_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="soupFan" position="-9 1.5 -8.1" rotation="0 0 10" scale="30 30 30" gltf-model="#soupFan_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
 
 
@@ -172,7 +178,7 @@
           <a-entity id="chair" position="0.2 0 -11.5" rotation="0 10 0" scale="30 30 30" gltf-model="#chair_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="chair" position="1.8 0 -11.5" rotation="0 -30 0" scale="30 30 30" gltf-model="#chair_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
 
-      <a-entity id="camera_table" position="-3 0.4 -2" geometry="primitive:box; height:0.8; width:0.75; depth:0.75;" material="color:grey;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+      <a-entity position="-3 0.4 -2" geometry="primitive:box; height:0.8; width:0.75; depth:0.75;" material="color:grey;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="camera" position="-3 1 -2" scale="50 50 50" gltf-model="#camera_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="keyCard" position="-3 0.8 -2.2" scale="30 30 30" gltf-model="#keyCard_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="false"></a-entity>
       
@@ -182,7 +188,7 @@
 
 
       <!-- load science and tech room models-->
-      <a-entity id="television_table" position="11 0.4 1.8" geometry="primitive:box; height:0.8; width:1.2; depth:5;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+      <a-entity position="11 0.4 1.8" geometry="primitive:box; height:0.8; width:1.2; depth:5;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="television1" position="11.1 0.8 0.8" rotation="0 -90 0" scale="30 30 30" gltf-model="#television_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="television2" position="11 0.8 2.2" rotation="0 -90 0" scale="30 30 30" gltf-model="#television_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="television3" position="11.05 0.8 3.5" rotation="0 -90 0" scale="30 30 30" gltf-model="#television_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -193,8 +199,10 @@
           <a-entity id="cameraLens" position="10 1 -6" rotation="90 0 0" scale="100 100 100" gltf-model="#cameraLens_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
             
       <a-entity id="radio" position="5.5 0 -12" rotation="0 25 0" scale="80 80 80" gltf-model="#radio_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity id="railSegment" position="6.5 0.05 6" rotation="0 -25 0" scale="30 30 30" gltf-model="#railSegment_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      <a-entity position="5 0.4 2" geometry="primitive:box; height:0.8; width:0.8; depth:0.8;" material="color:white;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
+          <a-entity id="ringStand" position="5 0.8 2" rotation="0 120 0" scale="30 30 30" gltf-model="#ringStand_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
       
-
     
     </a-scene>
 
