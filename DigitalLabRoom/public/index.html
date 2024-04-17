@@ -29,6 +29,19 @@
         <img id="AF_wall_img" src="assets\textures\AF_walls.png" crossorigin="anonymous">
         <img id="ST_wall_img" src="assets\textures\ST_walls.png" crossorigin="anonymous">
         <!-- ^ credit: flaticon @ https://www.flaticon.com/ -->
+        <img id="slidesCode_img" src="assets\images\slides_code.png" crossorigin="anonymous">
+        <img id="slide0_img" src="assets\images\slide0.png" crossorigin="anonymous">
+        <img id="slide1_img" src="assets\images\slide1.png" crossorigin="anonymous">
+        <img id="slide2_img" src="assets\images\slide2.png" crossorigin="anonymous">
+        <img id="slide3_img" src="assets\images\slide3.png" crossorigin="anonymous">
+        <img id="slide4_img" src="assets\images\slide4.png" crossorigin="anonymous">
+        <img id="slide5_img" src="assets\images\slide5.png" crossorigin="anonymous">
+        <img id="slide6_img" src="assets\images\slide6.png" crossorigin="anonymous">
+        <img id="slide7_img" src="assets\images\slide7.png" crossorigin="anonymous">
+        <img id="slide8_img" src="assets\images\slide8.png" crossorigin="anonymous">
+        <img id="slide9_img" src="assets\images\slide9.png" crossorigin="anonymous">
+
+
 
 
         <!-- sound effects-->
@@ -76,7 +89,7 @@
         <circles-assets/>
       </a-assets>
 
-      <!--<a-entity camera wasd-controls look-controls position="-9 1.6 6"></a-entity>-->
+      <a-entity camera wasd-controls look-controls position="-9 1.6 6"></a-entity>
 
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <!-- <circles-manager-avatar/>-->
@@ -112,6 +125,16 @@
       <a-entity id="microscope_table" position="-7.5 0.4 3" geometry="primitive:box; height:0.8; width:1.0; depth:3.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="microscope" position="-7.7 0.8 3" rotation="0 -90 0" scale="30 30 30" gltf-model="#microscope_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
           <a-entity id="monitor" position="-7.3 0.8 2" rotation="0 180 0" scale="30 30 30" gltf-model="#compMonitor_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+              <a-image id="slide0_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide0_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide1_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide1_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide2_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide2_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide3_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide3_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide4_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide4_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide5_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide5_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide6_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide6_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide7_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide7_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide8_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide8_img" width="1" height="0.6" visible="false"></a-image>
+              <a-image id="slide9_screen" position="-7.48 1.25 2" rotation="0 -90 0" src="#slide9_img" width="1" height="0.6" visible="false"></a-image>
           <a-entity id="slideCase" position="-7.7 0.8 4" rotation="0 180 0" scale="30 30 30" gltf-model="#slideCase_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;" visible="true"></a-entity>
               <a-entity id="slide0" position="-7.9 0.8 3.5" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-entity id="slide1" position="-7.9 0.8 3.6" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
@@ -121,8 +144,10 @@
               <a-entity id="slide5" position="-7.7 0.8 3.55" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-entity id="slide6" position="-7.7 0.8 3.65" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
               <a-entity id="slide7" position="-7.7 0.8 3.75" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
-              <a-entity id="slide8" position="-7.7 0.8 3.85" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+              <a-entity id="slide8" position="-7.7 0.8 3.85" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>              
               <a-entity id="slide9" position="-7.7 0.8 3.95" scale="30 30 30" gltf-model="#slides_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
+      
+      <a-image position="-6.7 2.5 3" rotation="0 -90 0" src="#slidesCode_img" width="4.25" height="1"></a-image>
 
       <a-entity id="egg_table" position="-14 0.4 -3" geometry="primitive:box; height:0.8; width:1.0; depth:2.0;" material="color:black;" circles-sphere-env-map="src:#skyMap" shadow="case:true; receive:true;"></a-entity>
           <a-entity id="eggCandlingDevice" position="-14 0.8 -3.5" rotation="0 90 0" scale="30 30 30" gltf-model="#eggCandlingDevice_model" circles-sphere-env-map="src:#skyMap" shadow="cast:false; receive:true;"></a-entity>
